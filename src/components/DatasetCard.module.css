@@ -1,0 +1,83 @@
+.card {
+    position: relative;
+    background-color: var(--mantine-color-body);
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 24px;
+    cursor: pointer;
+    border: 1px solid var(--mantine-color-gray-3); /* ← default border color */
+    transition: transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    will-change: transform, box-shadow;
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: var(--mantine-color-blue-5); /* Keep a clear border */
+    box-shadow: 0 0 12px rgba(100, 150, 255, 0.3);
+    animation: glow 1.5s infinite ease-in-out;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 8px rgba(100, 150, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 16px rgba(100, 150, 255, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(100, 150, 255, 0.2);
+    }
+}
+
+.date {
+    position: absolute;
+    top: var(--mantine-spacing-xs);
+    right: 12px;
+    pointer-events: none;
+    font-size: var(--mantine-font-size-xs);
+    color: var(--mantine-color-dimmed);
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-bottom: var(--mantine-spacing-xs);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mantine-spacing-xs);
+    margin-bottom: var(--mantine-spacing-xs);
+    max-height: 60px;
+    overflow: hidden;
+}
+
+.description {
+    flex-grow: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    min-height: 60px;
+    max-height: 60px;
+}
+
+.footer {
+    margin-top: var(--mantine-spacing-sm);
+}
+
+.action {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+}
+
+.action:hover {
+    background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-6));
+}
