@@ -30,9 +30,11 @@ export default function DatasetCard({ dataset, onClick }: Props) {
 
     return (
         <Card withBorder radius="md" className={classes.card} onClick={onClick}>
-            <Text className={classes.date} fz="xs" c="dimmed">
-                {formattedDate}
-            </Text>
+            <div className={classes.dateWrapper}>
+                <Text className={classes.date} fz="xs" c="dimmed">
+                    {formattedDate}
+                </Text>
+            </div>
 
             <div className={classes.content}>
                 <Text className={classes.title} fw={500}>

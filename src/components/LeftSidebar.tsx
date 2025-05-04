@@ -7,7 +7,7 @@ import {
     IconMoon,
     IconSun,
     IconChartArcs,
-    IconChartDots
+    IconChartArrows
 } from '@tabler/icons-react';
 import {
     Center,
@@ -63,7 +63,7 @@ export default function LeftSidebar() {
                         onClick={() => navigate({ to: '/datasets' })}
                     />
                     <NavbarLink
-                        icon={IconChartDots}
+                        icon={IconChartArrows}
                         label="Exploration"
                         active={path.startsWith('/exploration')}
                         onClick={() => navigate({ to: '/exploration' })}
@@ -86,14 +86,14 @@ export default function LeftSidebar() {
             <div className={classes.navbarFooter}>
                 <Stack justify="center" gap={0}>
                     <NavbarLink
-                        icon={IconSettings}
-                        label="Settings"
-                        onClick={() => navigate({ to: '/settings' })}
-                    />
-                    <NavbarLink
                         icon={colorScheme === 'dark' ? IconSun : IconMoon}
                         label="Toggle Theme"
                         onClick={toggleColorScheme}
+                    />
+                    <NavbarLink
+                        icon={IconSettings}
+                        label="Settings"
+                        onClick={() => navigate({ to: '/settings' })}
                     />
                     <NavbarLink icon={IconLogout} label="Logout" onClick={() => {/* logout logic */}} />
                 </Stack>

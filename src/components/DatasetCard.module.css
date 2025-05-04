@@ -54,3 +54,17 @@
 .card:hover::before {
     opacity: 1;
 }
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.dateWrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+

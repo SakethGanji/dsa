@@ -12,7 +12,7 @@ import {
     MultiSelect,
     Select,
 } from '@mantine/core';
-import { IconSearch, IconPlus, IconFilter } from '@tabler/icons-react';
+import {IconSearch, IconPlus, IconFilter, IconArrowsUpDown} from '@tabler/icons-react';
 import DatasetCard from '../components/DatasetCard';
 import DatasetDetailPane from '../components/DatasetDetailPane';
 import { usePaginatedDatasets } from '../hooks/usePaginatedDatasets';
@@ -86,6 +86,16 @@ export default function DatasetsPage() {
                                 </Button>
                             </Popover.Target>
 
+                            <Popover.Target>
+                                <Button
+                                    variant="default"
+                                    leftSection={<IconArrowsUpDown size={16} />}
+                                    onClick={() => console.log('Sort')}
+                                >
+                                    Sort
+                                </Button>
+                            </Popover.Target>
+
                             <Popover.Dropdown>
                                 <Box>
                                     <MultiSelect
@@ -113,7 +123,7 @@ export default function DatasetsPage() {
                     {can.upload(user.role) && (
                         <Button
                             leftSection={<IconPlus size={16} />}
-                            onClick={() => setUploadModalOpen(true)} // ✅ open modal
+                            onClick={() => setUploadModalOpen(true)}
                         >
                             New Dataset
                         </Button>
@@ -145,6 +155,8 @@ export default function DatasetsPage() {
             )}
 
             <Drawer
+                offset={8}
+                radius="md"
                 opened={drawerOpen}
                 onClose={() => setDrawerOpen(false)}
                 title={selectedDataset?.name || 'Dataset Details'}
@@ -155,13 +167,13 @@ export default function DatasetsPage() {
                 {selectedDataset && <DatasetDetailPane dataset={selectedDataset} />}
             </Drawer>
 
-            {/* ✅ Modal for dataset upload */}
+            {/* Modal for dataset upload */}
             <DatasetUploadModal
                 opened={uploadModalOpen}
                 onClose={() => setUploadModalOpen(false)}
                 onSubmit={handleDatasetUpload}
                 allTags={allTags}
-                ownerId={user.id}
+                ownerId={user.name}
             />
         </>
     );
