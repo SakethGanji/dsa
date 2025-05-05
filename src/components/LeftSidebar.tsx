@@ -6,7 +6,7 @@ import {
     IconLogout,
     IconMoon,
     IconSun,
-    IconChartArcs,
+    IconHexagonLetterDFilled,
     IconChartArrows
 } from '@tabler/icons-react';
 import {
@@ -50,7 +50,7 @@ export default function LeftSidebar() {
         <nav className={classes.navbar}>
             <Center>
                 <div className={classes.logo}>
-                    <IconChartArcs size={25} stroke={2} color="white" />
+                    <IconHexagonLetterDFilled size={25} stroke={2} color="white" />
                 </div>
             </Center>
 
