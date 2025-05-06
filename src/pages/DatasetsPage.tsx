@@ -161,7 +161,6 @@ export default function DatasetsPage() {
                 onClose={() => setDrawerOpen(false)}
                 title={selectedDataset?.name || 'Dataset Details'}
                 size="lg"
-                padding="md"
                 position="right"
             >
                 {selectedDataset && <DatasetDetailPane dataset={selectedDataset} />}
